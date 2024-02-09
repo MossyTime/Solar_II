@@ -5,15 +5,15 @@ import math
 import random
 
 pygame.mixer.init()
-pygame.mixer_music.load("Sol2/data/tittle_music.mp3")
+pygame.mixer_music.load("data/tittle_music.mp3")
 pygame.mixer.music.play(-1)
-laser_sound=pygame.mixer.Sound("Sol2/data/laser_sound.mp3")
+laser_sound=pygame.mixer.Sound("data/laser_sound.mp3")
 pygame.mixer.Sound.set_volume(laser_sound,0.2)
-shoot_sound=pygame.mixer.Sound("Sol2/data/shoot_sound.mp3")
-boss_attack_sound=pygame.mixer.Sound("Sol2/data/boss_attack_sound.mp3")
-boss_warn=pygame.mixer.Sound("Sol2/data/boss_warn.mp3")
-boss_death_sound=pygame.mixer.Sound("Sol2/data/boss_death_sound.mp3")
-boss_entered=pygame.mixer.Sound("Sol2/data/boss_entered.mp3")
+shoot_sound=pygame.mixer.Sound("data/shoot_sound.mp3")
+boss_attack_sound=pygame.mixer.Sound("data/boss_attack_sound.mp3")
+boss_warn=pygame.mixer.Sound("data/boss_warn.mp3")
+boss_death_sound=pygame.mixer.Sound("data/boss_death_sound.mp3")
+boss_entered=pygame.mixer.Sound("data/boss_entered.mp3")
 
 
 class Game:
@@ -53,55 +53,55 @@ class Game:
 
         self.cloud_from_up=-100
         
-        self.cloud1=pygame.image.load("Sol2/data/cloud.png")
+        self.cloud1=pygame.image.load("data/cloud.png")
         self.cloud1=pygame.transform.scale(self.cloud1,(300,200))
         self.cloud1c=pygame.Rect(-500,-500,0,0)
-        self.rain1=pygame.image.load("Sol2/data/rain.png")
+        self.rain1=pygame.image.load("data/rain.png")
         self.rain1=pygame.transform.scale(self.rain1,(100,100))
 
-        self.cloud2=pygame.image.load("Sol2/data/cloud.png")
+        self.cloud2=pygame.image.load("data/cloud.png")
         self.cloud2=pygame.transform.scale(self.cloud2,(300,200))
         self.cloud2c=pygame.Rect(-500,-500,0,0)
-        self.rain2=pygame.image.load("Sol2/data/rain.png")
+        self.rain2=pygame.image.load("data/rain.png")
         self.rain2=pygame.transform.scale(self.rain2,(100,100))
 
-        self.cloud3=pygame.image.load("Sol2/data/cloud.png")
+        self.cloud3=pygame.image.load("data/cloud.png")
         self.cloud3=pygame.transform.scale(self.cloud3,(300,200))
         self.cloud3c=pygame.Rect(-500,-500,0,0)
-        self.rain3=pygame.image.load("Sol2/data/rain.png")
+        self.rain3=pygame.image.load("data/rain.png")
         self.rain3=pygame.transform.scale(self.rain3,(100,100))
 
-        self.cloud4=pygame.image.load("Sol2/data/cloud.png")
+        self.cloud4=pygame.image.load("data/cloud.png")
         self.cloud4=pygame.transform.scale(self.cloud4,(300,200))
         self.cloud4c=pygame.Rect(-500,-500,0,0)
-        self.rain4=pygame.image.load("Sol2/data/rain.png")
+        self.rain4=pygame.image.load("data/rain.png")
         self.rain4=pygame.transform.scale(self.rain4,(100,100))
 
-        self.cloud5=pygame.image.load("Sol2/data/cloud.png")
+        self.cloud5=pygame.image.load("data/cloud.png")
         self.cloud5=pygame.transform.scale(self.cloud5,(300,200))
         self.cloud5c=pygame.Rect(-500,-500,0,0)
-        self.rain5=pygame.image.load("Sol2/data/rain.png")
+        self.rain5=pygame.image.load("data/rain.png")
         self.rain5=pygame.transform.scale(self.rain5,(100,100))
 
-        self.cloud6=pygame.image.load("Sol2/data/cloud.png")
+        self.cloud6=pygame.image.load("data/cloud.png")
         self.cloud6=pygame.transform.scale(self.cloud6,(300,200))
         self.cloud6c=pygame.Rect(-500,-500,0,0)
-        self.rain6=pygame.image.load("Sol2/data/rain.png")
+        self.rain6=pygame.image.load("data/rain.png")
         self.rain6=pygame.transform.scale(self.rain6,(100,100))
 
-        self.cloud7=pygame.image.load("Sol2/data/cloud.png")
+        self.cloud7=pygame.image.load("data/cloud.png")
         self.cloud7=pygame.transform.scale(self.cloud7,(300,200))
         self.cloud7c=pygame.Rect(-500,-500,0,0)
-        self.rain7=pygame.image.load("Sol2/data/rain.png")
+        self.rain7=pygame.image.load("data/rain.png")
         self.rain7=pygame.transform.scale(self.rain7,(100,100))
 
-        self.boss_attack=pygame.image.load("Sol2/data/boss_animation.png")
+        self.boss_attack=pygame.image.load("data/boss_animation.png")
         self.boss_attack=pygame.transform.scale(self.boss_attack,(1500,150))
         
-        self.boss_death=pygame.image.load("Sol2/data/boss_death.png")
+        self.boss_death=pygame.image.load("data/boss_death.png")
         self.boss_death=pygame.transform.scale(self.boss_death,(600,600))
 
-        self.boss_animation=pygame.image.load("Sol2/data/boss_attack.png")
+        self.boss_animation=pygame.image.load("data/boss_attack.png")
         self.boss_animation=pygame.transform.rotate(self.boss_animation,90)
         self.boss_animation=pygame.transform.scale(self.boss_animation,(600,200))
 
@@ -113,14 +113,14 @@ class Game:
 
         self.cutscene=True
 
-        self.boss_prep=1600
+        self.boss_prep=1620
 
-        self.victory_screen=pygame.image.load("Sol2/data/victory_screen.png")
+        self.victory_screen=pygame.image.load("data/victory_screen.png")
         self.victory_screen=pygame.transform.scale(self.victory_screen,(1500,700))
 
         self.wave=1
 
-        self.boss_entered_screen=pygame.image.load("Sol2/data/flash.png")
+        self.boss_entered_screen=pygame.image.load("data/flash.png")
         self.boss_entered_screen=pygame.transform.scale(self.boss_entered_screen,(1500,700))
 
         self.col_rot_orb=pygame.Rect(0,0,0,0)
@@ -182,7 +182,7 @@ class Game:
         self.rn6=100
         self.rn7=100
 
-        self.boss=pygame.image.load("Sol2/data/boss_cloud.png")
+        self.boss=pygame.image.load("data/boss_cloud.png")
         self.boss=pygame.transform.scale(self.boss,(600,600))
         self.collision_boss=pygame.Rect(0,0,0,0)
 
@@ -194,11 +194,11 @@ class Game:
 
         self.retry_music_flag=True
 
-        self.tittle_screen=pygame.image.load("Sol2/data/tittle_screen.png")
+        self.tittle_screen=pygame.image.load("data/tittle_screen.png")
         self.tittle_screen=pygame.transform.scale(self.tittle_screen,(1500,700))
-        self.bg=pygame.image.load("Sol2/data/background.png")
+        self.bg=pygame.image.load("data/background.png")
 
-        self.retry_screen=pygame.image.load("Sol2/data/retry_screen.png")
+        self.retry_screen=pygame.image.load("data/retry_screen.png")
         self.retry_screen=pygame.transform.scale(self.retry_screen,(1500,700))
 
         self.collision_up=pygame.Rect(0,0,1500,5)
@@ -209,22 +209,22 @@ class Game:
         self.player_pos=[600,200]
         self.player_movement=[0,0,0,0]
 
-        self.logo_sun=pygame.image.load("Sol2/data/sun.png")
+        self.logo_sun=pygame.image.load("data/sun.png")
         self.logo_sun=pygame.transform.scale(self.logo_sun,(150,150))
 
-        self.player=pygame.image.load("Sol2/data/sun.png")
+        self.player=pygame.image.load("data/sun.png")
         self.player=pygame.transform.scale(self.player,(100,100))
         self.collision_player=pygame.Rect((self.player_pos),(100,100))
 
-        self.orb=pygame.image.load("Sol2/data/orb.png")
+        self.orb=pygame.image.load("data/orb.png")
         self.orb=pygame.transform.scale(self.orb,(100,100))
 
-        self.laser=pygame.image.load("Sol2/data/beam_laser.png")
+        self.laser=pygame.image.load("data/beam_laser.png")
         self.laser=pygame.transform.scale(self.laser,(1500,100))
 
         self.l_box=pygame.Rect(self.player_pos[0],self.player_pos[1],0,0)
 
-        self.ball=pygame.image.load("Sol2/data/ball.png")
+        self.ball=pygame.image.load("data/ball.png")
         self.ball=pygame.transform.scale(self.ball,(300,300))
 
         self.step_x=0
@@ -277,7 +277,7 @@ class Game:
 
                 if self.victory_music_flag:
                     pygame.mixer_music.stop()
-                    pygame.mixer_music.load("Sol2/data/victory_music.mp3")
+                    pygame.mixer_music.load("data/victory_music.mp3")
                     pygame.mixer_music.play(-1)
                     self.victory_music_flag=False
 
@@ -292,7 +292,7 @@ class Game:
                 if self.retry_music_flag:
 
                     pygame.mixer_music.stop()
-                    pygame.mixer_music.load("Sol2/data/retry_music.mp3")
+                    pygame.mixer_music.load("data/retry_music.mp3")
                     pygame.mixer.music.play(-1)
                     self.retry_music_flag=False
 
@@ -355,7 +355,7 @@ class Game:
 
                             self.time_flag=True
 
-                            self.boss_prep=1600
+                            self.boss_prep=1620
 
                             self.flag_3=False
 
@@ -454,7 +454,7 @@ class Game:
             self.le_time=int(pygame.time.get_ticks()/1000)
 
             if self.wave_music_flag:
-                pygame.mixer_music.load("Sol2/data/wave_music.mp3")
+                pygame.mixer_music.load("data/wave_music.mp3")
                 pygame.mixer.music.play(-1)
                 self.wave_music_flag=False
   
@@ -702,7 +702,7 @@ class Game:
                 while self.cutscene:
                     if self.boss_music_flag:
                         pygame.mixer_music.stop()
-                        self.boss_music=pygame.mixer_music.load("Sol2/data/boss_music.mp3")
+                        self.boss_music=pygame.mixer_music.load("data/boss_music.mp3")
                         pygame.mixer_music.set_volume(0.5)
                         pygame.mixer_music.play(-1)
                         self.boss_music_flag=False
