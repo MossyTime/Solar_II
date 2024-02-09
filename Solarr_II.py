@@ -113,7 +113,7 @@ class Game:
 
         self.cutscene=True
 
-        self.boss_prep=1620
+        self.boss_prep=1600
 
         self.victory_screen=pygame.image.load("data/victory_screen.png")
         self.victory_screen=pygame.transform.scale(self.victory_screen,(1500,700))
@@ -355,7 +355,7 @@ class Game:
 
                             self.time_flag=True
 
-                            self.boss_prep=1620
+                            self.boss_prep=1600
 
                             self.flag_3=False
 
