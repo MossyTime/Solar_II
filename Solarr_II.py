@@ -762,7 +762,7 @@ class Game:
                         self.flash_flag=False
                     #end of flash
                     self.screen.blit(self.boss,(self.boss_prep,50))
-                    self.boss_prep-=1.4
+                    self.boss_prep-=1
                     if self.boss_prep<=900:
                         self.cutscene=False
                     pygame.display.update()
