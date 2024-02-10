@@ -95,13 +95,13 @@ class Game:
         self.rain7=pygame.image.load("data/rain.png")
         self.rain7=pygame.transform.scale(self.rain7,(100,100))
 
-        self.boss_attack=pygame.image.load("data/boss_animation.png")
+        self.boss_attack=pygame.image.load("data/boss_attack.png")
         self.boss_attack=pygame.transform.scale(self.boss_attack,(1500,150))
         
         self.boss_death=pygame.image.load("data/boss_death.png")
         self.boss_death=pygame.transform.scale(self.boss_death,(600,600))
 
-        self.boss_animation=pygame.image.load("data/boss_attack.png")
+        self.boss_animation=pygame.image.load("data/boss_animation.png")
         self.boss_animation=pygame.transform.rotate(self.boss_animation,90)
         self.boss_animation=pygame.transform.scale(self.boss_animation,(600,200))
 
@@ -762,7 +762,7 @@ class Game:
                         self.flash_flag=False
                     #end of flash
                     self.screen.blit(self.boss,(self.boss_prep,50))
-                    self.boss_prep-=1
+                    self.boss_prep-=1.4
                     if self.boss_prep<=900:
                         self.cutscene=False
                     pygame.display.update()
@@ -772,11 +772,11 @@ class Game:
                 self.screen.blit(self.boss,(900,50))
                 self.collision_boss=pygame.rect.Rect(900,50,600,600)
 
-                
-                if self.the_time>90:
-                    self.the_time=0
-                self.collision_attack=pygame.rect.Rect(0,0,0,0)
-                if self.the_time>30 and self.the_time<70:
+
+                if self.the_time>=0 and self.the_time<30:
+                    pass
+
+                elif self.the_time>=30 and self.the_time<70:
 
                     if self.warn_flag:
                         self.light_y=random.randint(0,700)
@@ -786,24 +786,24 @@ class Game:
                         self.boss_warn_rect=pygame.rect.Rect(0,self.light_y,1500,150)
                         pygame.draw.rect(self.screen,(0,100,255),self.boss_warn_rect)
                         self.screen.blit(self.boss_animation,(900,250))
-                        self.first_attack_flag=False
                         self.warn_flag=False
                         self.attack_flag=True
+                        self.first_attack_flag=False
 
-                elif self.the_time>70:
+                elif self.the_time>=70 and self.the_time<90:
 
                     if self.attack_flag:
-
                         pygame.mixer.Channel(2).play(pygame.mixer.Sound(boss_attack_sound))
                         self.screen.blit(self.boss_attack,(0,self.light_y))
                         self.screen.blit(self.boss_attack,(0,self.light_y-50))
                         self.screen.blit(self.boss_attack,(0,self.light_y+50))
                         self.collision_attack=pygame.rect.Rect(0,self.light_y,1500,150)
                         self.attack_flag=False
-                        self.warn_flag=True     
+                        self.warn_flag=True  
 
-                else:
-                    pass
+                if self.the_time==90:
+                    self.the_time=0
+                    self.collision_attack=pygame.rect.Rect(0,0,0,0)   
 
                 self.the_time+=1
             #end of boss
